@@ -1,0 +1,7 @@
+<textarea id="xml-tree-{{ widget.name }}" name="{{ widget.name }}" {% include "django/forms/widgets/attrs.html" %}>
+  {% if widget.value %}{{ widget.value }}{% endif %}</textarea>
+<script language="javascript">
+  $(document).ready(function () {
+    $("xml-tree-{{ widget.name }}").empty().simpleXML({ xmlString: {{ widget.value }} });
+  });
+</script>
